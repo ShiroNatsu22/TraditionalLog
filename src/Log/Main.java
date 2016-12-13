@@ -20,7 +20,7 @@ public class Main {
 
         List<String> list = null;
 
-        if (list == null) LogFile.getInstance().logWarn("LLista nula");
+        if (list == null) LogFile.getInstance().logWarn("Llista nula");
 
         try {
             LogFile.getInstance().logInfo("Anem a afegir un element.");
