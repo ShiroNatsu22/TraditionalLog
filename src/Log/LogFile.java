@@ -51,4 +51,21 @@ public class LogFile extends LogAbstract {
         }
     }
 
+
+
+    private static Log log = null;
+
+    public static Log ThreadInstance() {
+        if (log == null) createInstance();
+        return log;
+    }
+
+    private synchronized static void createInstance(){
+        if (log == null){
+            log = new LogFile();
+        }
+    }
+
+    private LogFile() {
+    }
 }

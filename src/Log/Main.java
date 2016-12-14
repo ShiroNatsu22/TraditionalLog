@@ -8,25 +8,24 @@ import java.util.List;
 
 
 public class Main {
-    public static Log log = new LogFile();
 
     public static void main(String[] args) {
 
         //Delegacio de responsabilitats
-        LogFile.getInstance();
-        LogFile.getInstance().setLogError(true);
-        LogFile.getInstance().setLogInfo(true);
-        LogFile.getInstance().setLogWarn(true);
+        LogFile.ThreadInstance();
+        LogFile.ThreadInstance().setLogError(true);
+        LogFile.ThreadInstance().setLogInfo(true);
+        LogFile.ThreadInstance().setLogWarn(true);
 
         List<String> list = null;
 
-        if (list == null) LogFile.getInstance().logWarn("Llista nula");
+        if (list == null) LogFile.ThreadInstance().logWarn("Llista nula");
 
         try {
-            LogFile.getInstance().logInfo("Anem a afegir un element.");
+            LogFile.ThreadInstance().logInfo("Anem a afegir un element.");
             list.add("Element");
         } catch (NullPointerException npe) {
-            LogFile.getInstance().logError(" excepcio:" + npe.getMessage());
+            LogFile.ThreadInstance().logError(" excepcio:" + npe.getMessage());
         }
 
     }

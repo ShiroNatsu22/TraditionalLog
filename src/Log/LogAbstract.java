@@ -39,11 +39,7 @@ public abstract class LogAbstract implements Log {
         this.logInfo = logInfo;
     }
 
-    private synchronized static void createInstance() {
-        if (LOG == null) {
-            LOG = new LogFile();
-        }
-    }
+
 
     public static Log getInstance() {
         return LOG;
